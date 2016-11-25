@@ -1,8 +1,34 @@
 Two Sum:
+Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
 
 
-vector<int>
-map<int,int>
+vector<int>, at, vec.size(), push_back
+map<int,int>, map find, iterator, insert
 push_back
 insert
 throw
+my submission is below:
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        map<int, int> sum_map;
+        map<int, int>::iterator it_sum_map;
+        for (int i = 0; i < nums.size(); i++ ) {
+            int key = target - nums[i];
+            it_sum_map = sum_map.find(key);
+            if (it_sum_map != sum_map.end()){
+                vector<int> vec;
+                vec.push_back(i);
+                vec.push_back(it_sum_map->second);
+                return vec;
+            }
+            sum_map.insert(make_pair(nums[i],i));                 
+        }  
+        throw int(-1);
+        
+    }
+};
