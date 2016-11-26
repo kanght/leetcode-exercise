@@ -1,0 +1,23 @@
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        char* pHead = NULL;
+        char* pTail = NULL;
+        
+        pHead = &s;
+        pTail =&s + s.length() - 1;
+        for (int i = 0; i < s.length()/2; i++) {
+            if (*pHead==*pTail) {
+                pHead++;
+                pTail--;
+            } else {
+                return false;
+            }
+            
+            
+        }
+        return true;
+        
+        
+    }
+};
