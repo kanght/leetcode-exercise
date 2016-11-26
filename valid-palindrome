@@ -12,3 +12,25 @@ public:
         return true;
     }
 };
+
+
+consider more complex conditions:
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        std::transform(s.begin(),s.end(),s.begin(),tolower);
+        int i = 0, j = s.length() - 1;
+        while (i < j) {
+                        
+        } 
+        for (int i = 0,  i < j; i++, j--) {
+            if(Char::IsLetterOrDigit(s[i])&& != s[j]) {
+                return false;
+            }
+        }
+        return true;
+        
+    }
+};
+
+need to use the Char::IsLetterOrDigit
