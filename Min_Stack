@@ -26,7 +26,7 @@ public:
         m_Stack.push(x);
         if(m_minStack.empty()){
             m_minStack.push(x);
-        } else if (x < m_minStack.top()) {
+        } else if (x < m_minStack.top()) {    ////here missing a = condition, i.e. x<=top, we should push it, not just <, but also =
             m_minStack.push(x);
         }
     }
