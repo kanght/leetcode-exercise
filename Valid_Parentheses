@@ -1,0 +1,41 @@
+20. Valid Parentheses
+
+Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
+
+
+class Solution {
+    private:
+    static const map<char,char> m_valid_parentheses_map;
+public:
+    bool isValid(string s) {
+        stack<char> sKey;
+        for (int i=0;i<s.length();i++){
+            char c=s[i];
+            if(m_valid_parentheses_map.find(c) != m_valid_parentheses_map.end()) {
+                sKey.push(c);
+            } else if ((m_valid_parentheses_map.find(sKey.top()))->second == c) {
+                sKey.pop();
+                
+            } else {
+                return false;
+            }
+             
+        }
+        if(sKey.empty()) {
+            return true;
+        } else {
+            return false;
+        }
+        
+            
+    }
+};
+const map<char,char> Solution::m_valid_parentheses_map={
+        {'(',')'},
+        {'[',']'},
+        {'{','}'}};
+        
+        note: here the static const member variable is assigned the value outside of the class
+        note: map, find, iterator->second begin(), end()
