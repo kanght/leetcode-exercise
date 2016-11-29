@@ -4,6 +4,13 @@ Given a string containing just the characters '(', ')', '{', '}', '[' and ']', d
 
 The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
 
+note: else if (sKey.empty()
+                ||(m_valid_parentheses_map.find(sKey.top()))->second != c) {
+                return false;
+            } else {
+            sKey.pop();
+            not sure what is the difference, the above is no runtime error, but below has runtime error.
+
 
 class Solution {
     private:
